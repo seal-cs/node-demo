@@ -15,7 +15,7 @@ node {
    }
 
    stage('Docker Build and Push') {
-     docker.withRegistry('https://index.docker.io/v2/', 'dockerhub') {
+     docker.withRegistry('https://index.docker.io/v2/', 'hub.docker.com') {
        def app = docker.build("sealcs/node-demo:${commit_id}", '.').push()
      }
    }
